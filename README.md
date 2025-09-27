@@ -48,15 +48,3 @@ This will log process details into:
 ```bash
 sudo podman run -d --name proc-monitor -v $(pwd):/app:Z process-tracker
 ```
-
----
-
-
-
-
-
----
-
-👉 Bas tum `your-username` ko apne GitHub username se replace karke use kar lena.
-
-Kya chahte ho main tumhe **process_log.txt ka ek small real example output** bhi add karke README.md me daal dun (jaise Cardsafe-Encryptor me UI screenshot hoga)?

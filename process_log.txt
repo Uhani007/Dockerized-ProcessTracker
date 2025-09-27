@@ -1,0 +1,15 @@
+Example Log Output
+
+```
+------------------------------------------------------------------------------------------
+
+PID: 123 - Name: python3
+Informations:
+  cpu_percent: 0.0
+  memory_info: pmem(rss=13545472, vms=16834560, shared=7122944, text=4096, data=7774208)
+  threads: [pthread(id=4, user_time=0.06, system_time=0.01)]
+  status: running
+  username: root
+
+------------------------------------------------------------------------------------------
+```

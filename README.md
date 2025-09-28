@@ -41,5 +41,6 @@ sudo docker run --rm process-tracker
 ### 4️⃣ Run in background (optional)
 
 ```bash
-sudo podman run -d --name proc-monitor -v $(pwd):/app:Z process-tracker
+sudo docker run -d --name proc-monitor process-tracker
+
 ```

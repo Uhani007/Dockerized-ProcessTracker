@@ -37,10 +37,9 @@ sudo docker run --rm process-tracker
 ```
 
 ```
-
 ### 4️⃣ Run in background (optional)
 
-```bash
+
 sudo docker run -d --name proc-monitor process-tracker
 
 ```

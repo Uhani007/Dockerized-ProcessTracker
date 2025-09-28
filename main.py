@@ -1,11 +1,10 @@
 import psutil
-import datetime
 
-def listar_informacoes_processos():
-    # Lista de itens desejados
-    itens = [
+def list_process_information():
+    # List of desired attributes
+    attributes = [
         'cmdline', 
-        #'connections',
+       # 'connections',
         'cpu_affinity', 
         'cpu_num', 
         'cpu_percent', 
@@ -36,24 +35,22 @@ def listar_informacoes_processos():
         'username'
     ]
 
-    with open("/app/process_log.txt", "a") as f:  
-        for proc in psutil.process_iter(['pid', 'name']):
-            try:
-                process_info = proc.as_dict(attrs=itens)
+    # Iterate over all processes
+    for proc in psutil.process_iter(['pid', 'name']):
+        try:
+            process_info = proc.as_dict(attrs=attributes)
+            print('\n---------------------------------------------------------------------------------------\n')
 
-                f.write("\n" + "-" * 90 + "\n")
-                f.write(f"\n{datetime.datetime.now()} - PID: {process_info['pid']} - Nome: {process_info['name']}\n")
-                f.write("Informações:\n")
-                for item, value in process_info.items():
-                    if item not in ['pid', 'name']:
-                        f.write(f"  {item}: {value}\n")
-                f.write("\n" + "-" * 90 + "\n\n")
+            print(f"\nPID: {process_info['pid']} - Name: {process_info['name']}")
+            print("Information:")
+            for attr, value in process_info.items():
+                if attr not in ['pid', 'name']:
+                    print(f"  {attr}: {value}")
 
-            except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
-                pass
-
+            print('\n---------------------------------------------------------------------------------------\n')
+        except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+            # Skip processes that no longer exist or are inaccessible
+            pass
 
 if __name__ == "__main__":
-    listar_informacoes_processos()
-
-
+    list_process_information()

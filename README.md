@@ -14,7 +14,7 @@ Dockerized-ProcessTracker monitors running system processes. It uses the **psuti
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/your-username/Dockerized-ProcessTracker.git
+git clone https://github.com/Uhani007/Dockerized-ProcessTracker.git
 cd Dockerized-ProcessTracker
 ```
 

@@ -1,6 +1,6 @@
 # Dockerized-ProcessTracker 🐳
 
-Dockerized-ProcessTracker is a Python-based tool for monitoring running system processes. It uses the **psutil** library to gather detailed process information. With Docker support, it can run consistently across different environments.
+Dockerized-ProcessTracker monitors running system processes. It uses the **psutil** library to gather detailed process information. With Docker support, it can run consistently across different environments.
 
 ## 🚀 Features
 

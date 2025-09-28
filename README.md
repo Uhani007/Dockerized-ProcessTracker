@@ -1,7 +1,7 @@
 # Dockerized-ProcessTracker  🐳
 
 **Dockerized-ProcessTracker** is a Python-based tool for monitoring running system processes.
-It uses the `psutil` library to gather detailed process information and logs it into a file.
+It uses the `psutil` library to gather detailed process information.
 With Docker support, it can run consistently across different environments.
 
 ---
@@ -11,7 +11,6 @@ With Docker support, it can run consistently across different environments.
 *  Logs system process details (PID, CPU, memory, I/O, threads, etc.)
 *  Built with Python & psutil
 *  Dockerized for easy deployment
-*  Automatic logging into `process_log.txt`
 *  Continuous monitoring inside containers
 
 ---
@@ -28,19 +27,15 @@ cd Dockerized-ProcessTracker
 ### 2️⃣ Build Docker image
 
 ```bash
-sudo podman build -t process-tracker .
+sudo docker build -t process-tracker .
 ```
 
 ### 3️⃣ Run the container
 
 ```bash
-sudo podman run --rm -v $(pwd):/app:Z process-tracker
+sudo docker run --rm process-tracker
 ```
 
-This will log process details into:
-
-```
-~/ProcessTracker/process_log.txt
 ```
 
 ### 4️⃣ Run in background (optional)
